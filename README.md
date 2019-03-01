@@ -1,7 +1,7 @@
-# n9k_ifload
+# n9k_ifrate
 ## Description
 The script prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms.
-Further port-channel and member interfaces are displayed in a structured way and IO summary is calculated over all ports.
+Further port-channel and member interfaces are displayed in a structured way and there will be a IO summary calculated over all ports.
 
 The script knows two options:
 
@@ -11,7 +11,7 @@ The script knows two options:
  
     -du: works as well
  
- Without options all interfaces are shown.
+ Without any option all interfaces are shown.
 
 ## To use
 
@@ -19,26 +19,26 @@ The script knows two options:
      
  2. Execute using:
      
-        source ifload.py
+        source n9k_ifrate.py
  
        or
    
-        source ifload.py -d
+        source n9k_ifrate.py -d
  
        or
    
-        source ifload.py -u
+        source n9k_ifrate.py -u
 
   3. Configure an alias e.g.
   
-         cli alias name ifload source n9k_ifload.py
+         cli alias name ifrate source n9k_ifrate.py
 
 
  The script was tested on N9K using 7.0(3)I6(1) release. It should work at N5k and N7k as well.
  
  ## Sample output
  ```
-Leaf# ifload -d
+Leaf# ifrate -d
 
 Collecting and processing interface statistics ...
 
