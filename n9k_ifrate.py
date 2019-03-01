@@ -54,6 +54,7 @@ try:
 except:
     ignore = None
 
+
 def args_parser():
     usage = "\n\tsource n9k_ifrate.py [option]\n\t -d, list ports with description \n\t -u, list ports in up state"
     parser = OptionParser(usage=usage)
@@ -74,13 +75,14 @@ def args_parser():
         parser.error("Valid options are -d and -u")
 
     return options
-	
+
+
 def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l_tx_bps_sum, l_nflag, l_uflag):
     # print l_nflag, l_uflag
     if_descr = "---"
 
     state = l_i.find(l_if_manager + 'state').text
-    desc = l_i.find(l_if_manager + 'desc','')
+    desc = l_i.find(l_if_manager + 'desc', '')
 
     # return in case of up flag and interface down
     if l_uflag:
@@ -122,7 +124,7 @@ def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l
     sys.stdout.flush()
     return l_rx_bps_sum, l_tx_bps_sum
 
-	
+
 ### Main Program ###
 
 ### Get script options
@@ -150,7 +152,6 @@ pcm_tree = ET.ElementTree(ET.fromstring(cli('show port-channel sum | xml | exclu
 pcm_data = pcm_tree.getroot()
 pcm = '{http://www.cisco.com/nxos:1.0:eth_pcm_dc3}'
 
-
 table = "{0:17}{1:26}{2:6}{3:8}{4:9}{5:7}{6:12}{7:9}{8:7}{9:9}"
 print '-----------------------------------------------------------------------------------------------------------------'
 print table.format("Port", "Descr", "State", "Intvl", "Rx Mbps", "Rx %", "Rx pps", "Tx Mbps", "Tx %", "Tx pps")
@@ -167,7 +168,8 @@ for p in pcm_data.iter(pcm + 'ROW_channel'):
                     pc_member_flag = False
                     # fetching and printing interface counter
                     # port-channel bps are not added to the sum
-                    rx_unused, tx_unused = if_counter(interface, i, if_manager, pc_member_flag, rx_bps_sum, tx_bps_sum, option.d_flag, option.u_flag)
+                    rx_unused, tx_unused = if_counter(interface, i, if_manager, pc_member_flag, rx_bps_sum, tx_bps_sum,
+                                                      option.d_flag, option.u_flag)
                     i.clear()
             except AttributeError:
                 pass
@@ -181,7 +183,8 @@ for p in pcm_data.iter(pcm + 'ROW_channel'):
                         if interface == member:
                             pc_member_flag = True
                             # fetching and printing interface counter
-                            rx_bps_sum, tx_bps_sum = if_counter(interface, i, if_manager, pc_member_flag, rx_bps_sum, tx_bps_sum, option.d_flag, option.u_flag)
+                            rx_bps_sum, tx_bps_sum = if_counter(interface, i, if_manager, pc_member_flag, rx_bps_sum,
+                                                                tx_bps_sum, option.d_flag, option.u_flag)
                             i.clear()
                     except AttributeError:
                         pass
@@ -198,7 +201,8 @@ for i in if_data.iter(if_manager + 'ROW_interface'):
         pc_member_flag = False
         interface = i.find(if_manager + 'interface').text
         # fetching and printing interface counter
-        rx_bps_sum, tx_bps_sum = if_counter(interface, i, if_manager, pc_member_flag, rx_bps_sum, tx_bps_sum, option.d_flag, option.u_flag)
+        rx_bps_sum, tx_bps_sum = if_counter(interface, i, if_manager, pc_member_flag, rx_bps_sum, tx_bps_sum,
+                                            option.d_flag, option.u_flag)
     except AttributeError:
         pass
 
