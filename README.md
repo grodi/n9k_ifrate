@@ -1,4 +1,4 @@
-## Description:
+## Description
 The script prints interface throughput/packet rate statistics in an
 easy to read list format on NX-OS platforms.
 Further port-channel and member interfaces are displayed in a structured way
