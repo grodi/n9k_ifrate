@@ -27,7 +27,7 @@ The script knows two options:
  
    or
    
-   source ifload.py -u
+   `source ifload.py -u`
 
  
 
