@@ -29,11 +29,12 @@ The script knows two options:
    
         source ifload.py -u
 
- 
+  3. Configure an alias e.g.
+  
+         cli alias name ifload source n9k_ifload.py
 
- The script was tested on N9K using 7.0(3)I6(1) release.
- 
- It should work at N5k and N7k as well.
+
+ The script was tested on N9K using 7.0(3)I6(1) release. It should work at N5k and N7k as well.
  
  ## Sample output
  ```
