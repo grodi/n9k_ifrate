@@ -12,13 +12,13 @@ The script knows two options:
  
  Without options all interfaces are shown.
 
-To use:
+## To use:
 
      1. Copy script to N9K switch bootflash:scripts/
      
      2. Execute using:
      
- source ifload.py
+' source ifload.py
  
    or
    
@@ -27,7 +27,7 @@ To use:
    or
    
  source ifload.py -u
- 
+ '
  
 
  The script was tested on N9K using 7.0(3)I6(1) release.
