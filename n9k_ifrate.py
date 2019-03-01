@@ -72,7 +72,7 @@ def args_parser():
     options, args = parser.parse_args()
 
     if len(args) >= 1:
-        parser.error("Valid options are -d and -u")
+        parser.error("No valid option!")
 
     return options
 
