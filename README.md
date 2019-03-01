@@ -19,11 +19,11 @@ The script knows two options:
      
  2. Execute using:
      
-   source ifload.py
+   ´source ifload.py`
  
    or
    
-   source ifload.py -d
+   `source ifload.py -d`
  
    or
    
