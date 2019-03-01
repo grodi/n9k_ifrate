@@ -5,7 +5,7 @@ Further port-channel and member interfaces are displayed in a structured way and
 
 The script knows two options:
 
- -d: list ports with description 
+...-d: list ports with description 
  
  -u: list ports in up state
  
