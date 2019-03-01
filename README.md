@@ -29,7 +29,7 @@ The script knows two options:
    
         source n9k_ifrate.py -u
 
-  3. Configure an alias e.g.
+  3. Configure an alias, e.g.
   
          cli alias name ifrate source n9k_ifrate.py
 
