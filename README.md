@@ -21,13 +21,13 @@ The script knows two options:
      
         source ifload.py
  
-   or
+       or
    
-   `source ifload.py -d`
+        source ifload.py -d
  
-   or
+       or
    
-   `source ifload.py -u`
+        source ifload.py -u
 
  
 
