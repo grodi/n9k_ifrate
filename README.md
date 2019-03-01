@@ -3,7 +3,7 @@
 The script prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms.
 Further port-channel and member interfaces are displayed in a structured way and there will be an IO summary calculated over all ports.
 
-The script knows two options:
+The script knows three options:
 
     -d: list ports with description 
  
