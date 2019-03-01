@@ -7,9 +7,9 @@ The script knows two options:
 
     -d: list ports with description 
  
- -u: list ports in up state
+    -u: list ports in up state
  
- -du: works as well
+    -du: works as well
  
  Without options all interfaces are shown.
 
@@ -19,7 +19,7 @@ The script knows two options:
      
  2. Execute using:
      
-    source ifload.py
+        source ifload.py
  
    or
    
