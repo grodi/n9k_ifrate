@@ -1,10 +1,11 @@
+# n9k_ifload
 ## Description
 The script prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms.
 Further port-channel and member interfaces are displayed in a structured way and IO summary is calculated over all ports.
 
 The script knows two options:
 
- -d: list ports with description
+ -d: list ports with description 
  
  -u: list ports in up state
  
@@ -18,15 +19,15 @@ The script knows two options:
      
  2. Execute using:
      
- source ifload.py
+   source ifload.py
  
    or
    
- source ifload.py -d
+   source ifload.py -d
  
    or
    
- source ifload.py -u
+   source ifload.py -u
 
  
 
