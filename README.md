@@ -1,7 +1,7 @@
 # n9k_ifrate
 ## Description
 The script prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms.
-Further port-channel and member interfaces are displayed in a structured way and there will be a IO summary calculated over all ports.
+Further port-channel and member interfaces are displayed in a structured way and there will be an IO summary calculated over all ports.
 
 The script knows two options:
 
@@ -34,7 +34,7 @@ The script knows two options:
          cli alias name ifrate source n9k_ifrate.py
 
 
- The script was tested on N9K using 7.0(3)I6(1) release. It should work at N5k and N7k as well.
+ The script was tested on N9K using 7.0(3)I6(1) release.  It should work at N5k and N7k as well.
  
  ## Sample output
  ```
