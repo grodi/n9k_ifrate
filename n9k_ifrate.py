@@ -20,7 +20,7 @@
 # Further port-channel and member interfaces are displayed in a structured way
 # and there will be a IO summary calculated over all ports.
 #
-# The script knows two options:
+# The script knows three options:
 #  -d: list ports with description
 #  -u: list ports in up state
 #  -du: works as well
