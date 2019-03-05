@@ -1,6 +1,6 @@
 # n9k_ifrate
 ## Description
-This is script is based on Cisco's [interface_rate_n7k.py](https://github.com/datacenter/nexus7000/blob/master/interface_rate_n7k.py) script. It prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms. Furthermore, it contains a couple of improvements, for example port-channel and member interfaces are displayed in a structured way and an IO summary is calculated over all ports.
+This script is based on Cisco's [interface_rate_n7k.py](https://github.com/datacenter/nexus7000/blob/master/interface_rate_n7k.py) script. It prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms. Furthermore, it contains a couple of improvements, for example port-channel and member interfaces are displayed in a structured way and an IO summary is calculated over all ports.
 
 The script knows three options:
 
