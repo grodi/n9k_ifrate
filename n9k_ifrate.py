@@ -54,7 +54,6 @@ try:
 except:
     ignore = None
 
-
 def args_parser():
     usage = "\n\tsource n9k_ifrate.py [option]\n\t -d, list ports with description \n\t -u, list ports in up state"
     parser = OptionParser(usage=usage)
@@ -76,7 +75,6 @@ def args_parser():
 
     return options
 
-
 def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l_tx_bps_sum, l_nflag, l_uflag):
     # print l_nflag, l_uflag
     if_descr = "---"
@@ -87,12 +85,10 @@ def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l
     # return in case of up flag and interface down
     if l_uflag:
         if state == 'down':
-            # do not print interface statistics
             return l_rx_bps_sum, l_tx_bps_sum
     # return in case of descr flag and no description configured
     if l_nflag:
         if desc is None:
-            # do not print interface statistics
             return l_rx_bps_sum, l_tx_bps_sum
         else:
             if_descr = desc.text[:20]
