@@ -75,8 +75,8 @@ def args_parser():
 
     return options
 
-def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l_tx_bps_sum, l_nflag, l_uflag):
-    # print l_nflag, l_uflag
+def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l_tx_bps_sum, l_dflag, l_uflag):
+    # print l_dflag, l_uflag
     if_descr = "---"
 
     state = l_i.find(l_if_manager + 'state').text
@@ -87,14 +87,14 @@ def if_counter(l_interface, l_i, l_if_manager, l_pc_member_flag, l_rx_bps_sum, l
         if state == 'down':
             return l_rx_bps_sum, l_tx_bps_sum
     # return in case of descr flag and no description configured
-    if l_nflag:
+    if l_dflag:
         if desc is None:
             return l_rx_bps_sum, l_tx_bps_sum
         else:
-            if_descr = desc.text[:20]
+            if_descr = desc.text[:22]
 
     if desc is not None:
-        if_descr = desc.text[:20]
+        if_descr = desc.text[:22]
 
     bw = int(l_i.find(l_if_manager + 'eth_bw').text)
     rx_intvl = l_i.find(l_if_manager + 'eth_load_interval1_rx').text
