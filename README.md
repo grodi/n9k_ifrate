@@ -4,7 +4,6 @@ This script is based on Cisco's [interface_rate_n7k.py](https://github.com/datac
 To reduce the table width a filter can be configured which shortens the interface descriptions as well as cdp/lldp hostnames. 
   event manager environment RMLIST "connected-to-, .mydom.dom, yyy-, zzz"   
 
-To shorten the the table width inter
 
 The script knows five options:
   -d: list ports with description
