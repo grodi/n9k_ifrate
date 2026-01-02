@@ -1,36 +1,53 @@
 # nx_ifrate
 ## Description
 This script is based on Cisco's [interface_rate_n7k.py](https://github.com/datacenter/nexus7000/blob/master/interface_rate_n7k.py) script. It prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms. Furthermore, it contains a couple of improvements, for example port-channel and member interfaces are displayed in a structured way, cdp or lldp neighbors are shown and an IO summary is calculated over all ports.
-To reduce the table width a filter can be configured which shortens the interface descriptions as well as cdp/lldp hostnames. 
-  event manager environment RMLIST "connected-to-, .mydom.dom, yyy-, zzz"   
+
+To reduce the table width a filter can be configured which shortens the interface descriptions as well as cdp or lldp hostnames.<br>
+```event manager environment RMLIST "connected-to-, .mydom.dom, yyy-, zzz"```
 
 
 The script knows five options:
-  -d: list ports with description
-  -u: list ports in up state
-  -r: adding a column with input/output discards
-  -n: looks for cdp neighbor or, if no cdp neighbor, try lldp
-  -l: shows load interval used for rate calculation. Default is 30 sec.
-  -du: any combination of options works as well
+
+  -d:&nbsp;&nbsp;&nbsp;&nbsp;list ports with description
+  
+  -u:&nbsp;&nbsp;&nbsp;&nbsp;list ports in up state
+  
+  -r:&nbsp;&nbsp;&nbsp;&nbsp;adding a column with input/output discards
+  
+  -n:&nbsp;&nbsp;&nbsp;&nbsp;looks for cdp neighbor or, if no cdp neighbor, try lldp
+  
+  -l:&nbsp;&nbsp;&nbsp;&nbsp;shows load interval used for rate calculation. Default is 30 sec.
+  
+  -du:&nbsp;&nbsp;any combination of options works as well
 
 Without an option all interfaces are shown. Discards or neighbors columns are not displayed in this case.
 
 ## To use
 
-1. Copy the script to the Nexus switch directory bootflash:scripts/
+1. Copy the script to the Nexus switch directory ```bootflash:scripts/```
 2. Execute using:
+   ```
    source nx_ifrate.py
-    or
+   ```
+   or
+   ```
    source nx_ifrate.py -d
-    or
+   ```
+   or
+   ```
    source nx_ifrate.py -u
-
-3. Configure an alias, e.g.
+   ```
+   
+4. Configure an alias, e.g.
+   ```
    cli alias name ifrate source nx_ifrate.py
-
-4. Configure a list removing unnessacary characters form interfaces description or the cdp/lldp neighbor hostname
+   ```
+   
+5. Configure a list removing unnessacary characters form interfaces description or the cdp/lldp neighbor hostname
+   ```
    event manager environment RMLIST "connected-to-, xxx-, yyy-, zzz"
-
+   ```
+   
 The script was tested on N9K using 10.6.1 release. But it should run on every NX release.
 
  
