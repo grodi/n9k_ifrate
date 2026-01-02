@@ -1,39 +1,39 @@
-# n9k_ifrate
+# nx_ifrate
 ## Description
-This script is based on Cisco's [interface_rate_n7k.py](https://github.com/datacenter/nexus7000/blob/master/interface_rate_n7k.py) script. It prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms. Furthermore, it contains a couple of improvements, for example port-channel and member interfaces are displayed in a structured way and an IO summary is calculated over all ports.
+This script is based on Cisco's [interface_rate_n7k.py](https://github.com/datacenter/nexus7000/blob/master/interface_rate_n7k.py) script. It prints interface throughput/packet rate statistics in an easy to read list format on NX-OS platforms. Furthermore, it contains a couple of improvements, for example port-channel and member interfaces are displayed in a structured way, cdp or lldp neighbors are shown and an IO summary is calculated over all ports.
+To reduce the table width a filter can be configured which shortens the interface descriptions as well as cdp/lldp hostnames. 
+  event manager environment RMLIST "connected-to-, .mydom.dom, yyy-, zzz"   
 
-The script knows three options:
+To shorten the the table width inter
 
-    -d: list ports with description 
- 
-    -u: list ports in up state
- 
-    -du: works as well
- 
- Without any option all interfaces are shown.
+The script knows five options:
+  -d: list ports with description
+  -u: list ports in up state
+  -r: adding a column with input/output discards
+  -n: looks for cdp neighbor or, if no cdp neighbor, try lldp
+  -l: shows load interval used for rate calculation. Default is 30 sec.
+  -du: any combination of options works as well
+
+Without an option all interfaces are shown. Discards or neighbors columns are not displayed in this case.
 
 ## To use
 
- 1. Copy script to N9K switch bootflash:scripts/
-     
- 2. Execute using:
-     
-        source n9k_ifrate.py
- 
-       or
-   
-        source n9k_ifrate.py -d
- 
-       or
-   
-        source n9k_ifrate.py -u
+1. Copy the script to the Nexus switch directory bootflash:scripts/
+2. Execute using:
+   source nx_ifrate.py
+    or
+   source nx_ifrate.py -d
+    or
+   source nx_ifrate.py -u
 
-  3. Configure an alias, e.g.
-  
-         cli alias name ifrate source n9k_ifrate.py
+3. Configure an alias, e.g.
+   cli alias name ifrate source nx_ifrate.py
 
+4. Configure a list removing unnessacary characters form interfaces description or the cdp/lldp neighbor hostname
+   event manager environment RMLIST "connected-to-, xxx-, yyy-, zzz"
 
- The script was tested on N9K using 7.0(3)I6(1) release.  It should work at N5k and N7k as well.
+The script was tested on N9K using 10.6.1 release. But it should run on every NX release.
+
  
  ## Sample output
  ```
