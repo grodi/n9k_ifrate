@@ -7,18 +7,19 @@ To reduce the table width a filter can be configured which shortens the interfac
 
 
 The script knows five options:
-
-  -d:&nbsp;&nbsp;&nbsp;&nbsp;list ports with description
+```
+  -d:  list ports with description
   
-  -u:&nbsp;&nbsp;&nbsp;&nbsp;list ports in up state
+  -u:  list ports in up state
   
-  -r:&nbsp;&nbsp;&nbsp;&nbsp;adding a column with input/output discards
+  -r:  adding a column with input/output discards
   
-  -n:&nbsp;&nbsp;&nbsp;&nbsp;looks for cdp neighbor or, if no cdp neighbor, try lldp
+  -n:  looks for cdp neighbor or, if no cdp neighbor, try lldp
   
-  -l:&nbsp;&nbsp;&nbsp;&nbsp;shows load interval used for rate calculation. Default is 30 sec.
+  -l:  shows load interval used for rate calculation. Default is 30 sec.
   
-  -du:&nbsp;&nbsp;any combination of options works as well
+  -du: any combination of options works as well
+```
 
 Without an option all interfaces are shown. Discards or neighbors columns are not displayed in this case.
 
@@ -48,7 +49,7 @@ Without an option all interfaces are shown. Discards or neighbors columns are no
    event manager environment RMLIST "connected-to-, xxx-, yyy-, zzz"
    ```
    
-The script was tested on N9K using 10.6.1 release. But it should run on every NX release.
+The script was tested on N9K using 10.6.1 release. But it should run under every NX release > 10.
 
  
  ## Sample output
